@@ -4,6 +4,7 @@ import {createBrowserHistory} from 'history';
 
 import Homepage from './components/HomePage';
 import Header from './components/Header';
+import io from 'socket.io-client';
 
 let history = createBrowserHistory();
 
@@ -16,6 +17,28 @@ const appStyle = {
 }
 
   class App extends React.Component {
+
+
+    constructor(props)
+    {
+      super(props)
+
+      this.state = {
+
+      }
+      this.addList = this.addList.bind(this);
+    }
+
+    componentDidMount() {
+      this.socket = io("/connect");
+    }
+
+    addList= (name)=> {
+      this.socket.emit("addList", name);
+    }
+    addItem = ()=>{
+
+    }
     render()
     {
       return (
@@ -29,7 +52,7 @@ const appStyle = {
             <Route
             exact
             path={"/"}
-            render={props => <Homepage/>}
+            render={props => <Homepage addList = {this.addList}/>}
             />
              <Route
             path={"/test"}

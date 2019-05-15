@@ -7,11 +7,7 @@ import ListItem from './ListItem';
 import Button from './Button';
 
 
-const accordionStyle =
-{
-  width: "80%"
 
-}
 
 const Panel = Collapse.Panel
 
@@ -54,7 +50,7 @@ class Accordion extends React.Component{
 
   render(){
     return(
-    <Collapse style={accordionStyle} accordion>
+    <Collapse accordion>
       {panels.map((panel, index) =>
         { return (
             <Panel key={index} header={panel.header}>

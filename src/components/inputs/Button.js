@@ -11,8 +11,6 @@ const buttonStyle =
 
 const Button = props =>{
 
-
-  
   return(
 
     <Btn onClick={props.onClick} style={buttonStyle}>

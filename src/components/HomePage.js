@@ -1,10 +1,12 @@
 import React from 'react';
+import Accordion from './inputs/Accordion';
+
 
 const HomePage = props =>{
 
   return(
     <>
-    <p>Page 1</p>
+    <Accordion/>
     </>
 
   );
